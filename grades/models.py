@@ -18,6 +18,7 @@ class QualificationHeader(models.Model):
     student = models.ForeignKey(Student, on_delete=models.DO_NOTHING)
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
+    course = models.CharField(max_length=15)
     school_year = models.CharField(max_length=15)
     section = models.CharField(max_length=15)
     observation = models.CharField(max_length=15)
