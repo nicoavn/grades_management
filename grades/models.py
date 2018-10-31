@@ -8,6 +8,7 @@ class Student(models.Model):
     first_name = models.CharField(max_length=45)
     last_name = models.CharField(max_length=45)
     order_number = models.IntegerField()
+    current_course = models.CharField(max_length=45)
 
 
 class Subject(models.Model):

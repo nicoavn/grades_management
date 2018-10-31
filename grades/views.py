@@ -5,3 +5,11 @@ from django.shortcuts import render
 
 def login_view(request):
     return render(request,'login.html',{})
+
+
+def grades_form(request):
+    return None
+
+
+def grades_submit(request):
+    return None
