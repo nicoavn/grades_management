@@ -19,4 +19,5 @@ from .views import *
 
 urlpatterns = [
     path('', login_view),
+    path('grading', grades_form),
 ]
