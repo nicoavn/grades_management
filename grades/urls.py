@@ -20,4 +20,5 @@ from .views import *
 urlpatterns = [
     path('', login_view),
     path('grading', grades_form),
+    path('students', show_student_list),
 ]
