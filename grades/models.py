@@ -11,6 +11,7 @@ class Student(models.Model):
     current_course = models.CharField(max_length=45)
 
 
+
 class Subject(models.Model):
     name = models.CharField(max_length=45)
 
