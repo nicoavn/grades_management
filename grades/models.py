@@ -11,10 +11,27 @@ class Student(models.Model):
     current_course = models.CharField(max_length=45)
 
 
-
 class Subject(models.Model):
     name = models.CharField(max_length=45)
 
+
+class Course(models.Model):
+    name = models.CharField(max_length=45)
+    section = models.CharField(max_length=1)
+
+
+class CourseConfiguration(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.DO_NOTHING)
+
+    key = models.CharField(max_length=45)
+    value = models.CharField(max_length=45)
+
+
+class StudentSubject(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.DO_NOTHING)
+    subject = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
+
+    year = models.CharField(max_length=10)  # 2010-2011
 
 
 class QualificationHeader(models.Model):
@@ -32,8 +49,9 @@ class QualificationHeader(models.Model):
 
 
 class Qualification(models.Model):
-    qualification_header = models.ForeignKey(QualificationHeader, on_delete=models.DO_NOTHING)
-    subject = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
+    # qualification_header = models.ForeignKey(QualificationHeader, on_delete=models.DO_NOTHING)
+    # subject = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
+    student_subject = models.ForeignKey(StudentSubject, on_delete=models.DO_NOTHING)
 
     p1_partial1 = models.CharField(max_length=15, null=True, blank=True)
     p1_partial2 = models.CharField(max_length=15, null=True, blank=True)
