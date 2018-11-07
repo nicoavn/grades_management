@@ -1,7 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container-fluid">
-   <h1>Hello world!</h1>
-</div>
+
+   <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"># Orden</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Curso actual</th>
+
+      <th scope="col">Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for student in students %}
+    <tr>
+      <th scope="row">{{ student.order_number }}</th>
+      <td>{{ student.first_name }}</td>
+      <td>{{ student.last_name }}</td>
+      <td>{{ student.current_course }}</td>
+
+      <td><a href="/student/{{ student.id }}">
+      Calificaciones
+      </a>
+      </td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+
 {% endblock %}
