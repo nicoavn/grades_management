@@ -10,14 +10,23 @@ class Student(models.Model):
     order_number = models.IntegerField()
     current_course = models.CharField(max_length=45)
 
+    def __str__(self):
+        return str(self.order_number) + " - " + self.first_name[0:1] + ". " + self.last_name
+
 
 class Subject(models.Model):
     name = models.CharField(max_length=45)
+
+    def __str__(self):
+        return self.name
 
 
 class Course(models.Model):
     name = models.CharField(max_length=45)
     section = models.CharField(max_length=1)
+
+    def __str__(self):
+        return self.name + " " + self.section
 
 
 class CourseConfiguration(models.Model):
@@ -26,12 +35,18 @@ class CourseConfiguration(models.Model):
     key = models.CharField(max_length=45)
     value = models.CharField(max_length=45)
 
+    def __str__(self):
+        return str(self.course) + " " + self.key + " " + self.value
+
 
 class StudentSubject(models.Model):
     student = models.ForeignKey(Student, on_delete=models.DO_NOTHING)
     subject = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
 
     year = models.CharField(max_length=10)  # 2010-2011
+
+    def __str__(self):
+        return str(self.student) + " " + str(self.subject) + " " + str(self.year)
 
 
 class QualificationHeader(models.Model):
