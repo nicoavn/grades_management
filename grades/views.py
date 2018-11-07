@@ -1,9 +1,8 @@
 from django.contrib.auth import authenticate, logout, login
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from grades.models import Student
+from grades.models import *
 
 
 def login_view(request):
@@ -33,7 +32,19 @@ def show_student_list(request):
 
 
 def grades_form(request, student_id):
-    return render(request, 'grades_form.html', {})
+    student = Student.objects.get(pk=student_id)
+
+    student_subjects = student.studentsubject_set.all()
+
+    ss = StudentSubject()
+    ss.qualification_set.first()
+
+    context = {
+        # 'student': str(student),
+        'student_subjects': student_subjects,
+        # 'qualifications': Qualification.objects.all(),
+    }
+    return render(request, 'grades_form.html', context)
 
 
 def grades_submit(request):

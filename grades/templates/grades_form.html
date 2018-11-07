@@ -4,21 +4,17 @@
 <div class="qualifications container-fluid">
     <div class="row no-gutters">
         <div class="offset-2"></div>
-        {% for q in qualifications %}
-            <div class="col-2">{{ q.subject.name }}</div>
+        {% for ss in student_subjects %}
+            <div class="col-2 text-center">{{ ss.subject.name }}</div>
         {% endfor %}
-
-        <div class="col-2 offset-2">Lengua Español</div>
-        <div class="col-2">Matemáticas</div>
-        <div class="col-2">Ciencias Sociales</div>
-        <div class="col-2">Ciencias Naturales</div>
-        <div class="col-2">Moral y Cívica</div>
     </div>
     <div class="row no-gutters grades-row">
         <div class="col-2 row-header text-center">
             <div class="header-container"><span>Calificaciones del año escolar</span></div>
         </div>
-        <div class="col-2 qualification-column">
+
+        {% for ss in student_subjects %}
+            <div class="col-2 qualification-column">
             <div class="row">
                 <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">AGO-SEPT-OCT:</label></div>
                 <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
@@ -44,110 +40,7 @@
                 <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
             </div>
         </div>
-        <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">AGO-SEPT-OCT:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">NOV-DIC-ENE:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">FEB-MAR:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">ABRIL-MAYO-JUNIO:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">C.F.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">% A.A:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-        </div>
-        <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">AGO-SEPT-OCT:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">NOV-DIC-ENE:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">FEB-MAR:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">ABRIL-MAYO-JUNIO:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">C.F.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">% A.A:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-        </div>
-        <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">AGO-SEPT-OCT:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">NOV-DIC-ENE:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">FEB-MAR:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">ABRIL-MAYO-JUNIO:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">C.F.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">% A.A:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-        </div>
-        <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">AGO-SEPT-OCT:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">NOV-DIC-ENE:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">FEB-MAR:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">ABRIL-MAYO-JUNIO:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">C.F.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="AGO-SEPT-OCT">% A.A:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="AGO-SEPT-OCT" name="" type="text" /></div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 
     <div class="row no-gutters grades-row">
@@ -155,7 +48,8 @@
             <div class="header-container"><span>Calificación completiva</span></div>
         </div>
 
-        <div class="col-2 qualification-column">
+        {% for ss in student_subjects %}
+            <div class="col-2 qualification-column">
             <div class="row">
                 <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="50% P.C.P">50% P.C.P:</label></div>
                 <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="50% P.C.P" name="" type="text" /></div>
@@ -173,78 +67,7 @@
                 <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.C." name="" type="text" /></div>
             </div>
         </div>
-        <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="50% P.C.P">50% P.C.P:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="50% P.C.P" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.P.C.">C.P.C.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.P.C." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="50% C.P.C.">50% C.P.C.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="50% C.P.C." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.C.">C.C.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.C." name="" type="text" /></div>
-            </div>
-        </div>
-        <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="50% P.C.P">50% P.C.P:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="50% P.C.P" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.P.C.">C.P.C.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.P.C." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="50% C.P.C.">50% C.P.C.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="50% C.P.C." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.C.">C.C.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.C." name="" type="text" /></div>
-            </div>
-        </div>
-        <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="50% P.C.P">50% P.C.P:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="50% P.C.P" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.P.C.">C.P.C.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.P.C." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="50% C.P.C.">50% C.P.C.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="50% C.P.C." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.C.">C.C.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.C." name="" type="text" /></div>
-            </div>
-        </div>
-        <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="50% P.C.P">50% P.C.P:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="50% P.C.P" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.P.C.">C.P.C.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.P.C." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="50% C.P.C.">50% C.P.C.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="50% C.P.C." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.C.">C.C.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.C." name="" type="text" /></div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 
     <div class="row no-gutters grades-row">
@@ -252,96 +75,26 @@
             <div class="header-container"><span>Calificación extraordinaria</span></div>
         </div>
 
+        {% for ss in student_subjects %}
         <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="30% P.C.P">30% P.C.P:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="30% P.C.P" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.P.EX.">C.P.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.P.EX." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="70% C.P.EX.">70% C.P.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="70% C.P.EX." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.EX.">C.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.EX." name="" type="text" /></div>
-            </div>
+        <div class="row">
+            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="30% P.C.P">30% P.C.P:</label></div>
+            <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="30% P.C.P" name="" type="text" /></div>
         </div>
-        <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="30% P.C.P">30% P.C.P:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="30% P.C.P" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.P.EX.">C.P.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.P.EX." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="70% C.P.EX.">70% C.P.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="70% C.P.EX." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.EX.">C.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.EX." name="" type="text" /></div>
-            </div>
+        <div class="row">
+            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.P.EX.">C.P.EX.:</label></div>
+            <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.P.EX." name="" type="text" /></div>
         </div>
-        <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="30% P.C.P">30% P.C.P:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="30% P.C.P" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.P.EX.">C.P.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.P.EX." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="70% C.P.EX.">70% C.P.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="70% C.P.EX." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.EX.">C.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.EX." name="" type="text" /></div>
-            </div>
+        <div class="row">
+            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="70% C.P.EX.">70% C.P.EX.:</label></div>
+            <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="70% C.P.EX." name="" type="text" /></div>
         </div>
-        <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="30% P.C.P">30% P.C.P:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="30% P.C.P" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.P.EX.">C.P.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.P.EX." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="70% C.P.EX.">70% C.P.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="70% C.P.EX." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.EX.">C.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.EX." name="" type="text" /></div>
-            </div>
+        <div class="row">
+            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.EX.">C.EX.:</label></div>
+            <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.EX." name="" type="text" /></div>
         </div>
-        <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="30% P.C.P">30% P.C.P:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="30% P.C.P" name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.P.EX.">C.P.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.P.EX." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="70% C.P.EX.">70% C.P.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="70% C.P.EX." name="" type="text" /></div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="C.EX.">C.EX.:</label></div>
-                <div class="col-5 col-inp-qualification"><input class="inp-qualification" id="C.EX." name="" type="text" /></div>
-            </div>
-        </div>
+    </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
