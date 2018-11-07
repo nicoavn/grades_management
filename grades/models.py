@@ -15,6 +15,7 @@ class Subject(models.Model):
     name = models.CharField(max_length=45)
 
 
+
 class QualificationHeader(models.Model):
     student = models.ForeignKey(Student, on_delete=models.DO_NOTHING)
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
