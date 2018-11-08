@@ -86,8 +86,8 @@ class Qualification(models.Model):
     p3_cpex_percent = models.CharField(max_length=15, null=True, blank=True)
     p3_cex = models.CharField(max_length=15, null=True, blank=True)
 
-    a = models.BooleanField()
-    r = models.BooleanField()
+    a = models.BooleanField(default=False)
+    r = models.BooleanField(default=False)
 
     cap_1 = models.CharField(max_length=15, null=True, blank=True)
     cap_2 = models.CharField(max_length=15, null=True, blank=True)
