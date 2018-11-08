@@ -66,31 +66,31 @@
         {% for ss in student_subjects %}
             {% with ss.qualification_set.all|first as first_qq %}
             <div class="col-2 qualification-column">
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-50-percent-P-C-P">50% P.C.P:</label></div>
-                <div class="col-4 col-inp-qualification">
-                    <input class="inp-qualification" id="ss-{{ ss.id }}-50-percent-P-C-P" name="ss-{{ ss.id }}-50-percent-P-C-P" type="text" value="{{ first_qq.p2_pcp_percent|default_if_none:"" }}" />
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-50-percent-P-C-P">50% P.C.P:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-50-percent-P-C-P" name="ss-{{ ss.id }}-50-percent-P-C-P" type="text" value="{{ first_qq.p2_pcp_percent|default_if_none:"" }}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-P-C">C.P.C.:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-C-P-C" name="ss-{{ ss.id }}-C-P-C" type="text" value="{{ first_qq.p2_cpc|default_if_none:"" }}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-50-percent-C-P-C">50% C.P.C.:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-50-percent-C-P-C" name="ss-{{ ss.id }}-50-percent-C-P-C" type="text" value="{{ first_qq.p2_cpc_percent|default_if_none:"" }}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-C">C.C.:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-C-C" name="ss-{{ ss.id }}-C-C" type="text" value="{{ first_qq.p2_cc|default_if_none:"" }}" />
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-P-C">C.P.C.:</label></div>
-                <div class="col-4 col-inp-qualification">
-                    <input class="inp-qualification" id="ss-{{ ss.id }}-C-P-C" name="ss-{{ ss.id }}-C-P-C" type="text" value="{{ first_qq.p2_cpc|default_if_none:"" }}" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-50-percent-C-P-C">50% C.P.C.:</label></div>
-                <div class="col-4 col-inp-qualification">
-                    <input class="inp-qualification" id="ss-{{ ss.id }}-50-percent-C-P-C" name="ss-{{ ss.id }}-50-percent-C-P-C" type="text" value="{{ first_qq.p2_cpc_percent|default_if_none:"" }}" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-C">C.C.:</label></div>
-                <div class="col-4 col-inp-qualification">
-                    <input class="inp-qualification" id="ss-{{ ss.id }}-C-C" name="ss-{{ ss.id }}-C-C" type="text" value="{{ first_qq.p2_cc|default_if_none:"" }}" />
-                </div>
-            </div>
-        </div>
             {% endwith %}
         {% endfor %}
     </div>
@@ -103,31 +103,31 @@
         {% for ss in student_subjects %}
             {% with ss.qualification_set.all|first as first_qq %}
             <div class="col-2 qualification-column">
-        <div class="row">
-            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-30-percent-P-C-P">30% P.C.P:</label></div>
-            <div class="col-4 col-inp-qualification">
-                <input class="inp-qualification" id="ss-{{ ss.id }}-30-percent-P-C-P" name="ss-{{ ss.id }}-30-percent-P-C-P" type="text" value="{{ first_qq.p3_pcp_percent|default_if_none:"" }}" />
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-30-percent-P-C-P">30% P.C.P:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-30-percent-P-C-P" name="ss-{{ ss.id }}-30-percent-P-C-P" type="text" value="{{ first_qq.p3_pcp_percent|default_if_none:"" }}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-P-EX">C.P.EX.:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-C-P-EX" name="ss-{{ ss.id }}-C-P-EX" type="text" value="{{ first_qq.p3_cpex|default_if_none:"" }}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-70-percent-C-P-EX">70% C.P.EX.:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-70-percent-C-P-EX" name="ss-{{ ss.id }}-70-percent-C-P-EX" type="text" value="{{ first_qq.p3_cpex_percent|default_if_none:"" }}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-EX">C.EX.:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-C-EX" name="ss-{{ ss.id }}-C-EX" type="text" value="{{ first_qq.p3_cex|default_if_none:"" }}" />
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-P-EX">C.P.EX.:</label></div>
-            <div class="col-4 col-inp-qualification">
-                <input class="inp-qualification" id="ss-{{ ss.id }}-C-P-EX" name="ss-{{ ss.id }}-C-P-EX" type="text" value="{{ first_qq.p3_cpex|default_if_none:"" }}" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-70-percent-C-P-EX">70% C.P.EX.:</label></div>
-            <div class="col-4 col-inp-qualification">
-                <input class="inp-qualification" id="ss-{{ ss.id }}-70-percent-C-P-EX" name="ss-{{ ss.id }}-70-percent-C-P-EX" type="text" value="{{ first_qq.p3_cpex_percent|default_if_none:"" }}" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-EX">C.EX.:</label></div>
-            <div class="col-4 col-inp-qualification">
-                <input class="inp-qualification" id="ss-{{ ss.id }}-C-EX" name="ss-{{ ss.id }}-C-EX" type="text" value="{{ first_qq.p3_cex|default_if_none:"" }}" />
-            </div>
-        </div>
-    </div>
             {% endwith %}
         {% endfor %}
     </div>
@@ -140,31 +140,31 @@
         {% for ss in student_subjects %}
             {% with ss.qualification_set.all|first as first_qq %}
             <div class="col-2 qualification-column">
-        <div class="row">
-            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-30-percent-P-C-P">30% P.C.P:</label></div>
-            <div class="col-4 col-inp-qualification">
-                <input class="inp-qualification" id="ss-{{ ss.id }}-30-percent-P-C-P" name="ss-{{ ss.id }}-30-percent-P-C-P" type="text" value="{{ first_qq.p3_pcp_percent|default_if_none:"" }}" />
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-30-percent-P-C-P">30% P.C.P:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-30-percent-P-C-P" name="ss-{{ ss.id }}-30-percent-P-C-P" type="text" value="{{ first_qq.p3_pcp_percent|default_if_none:"" }}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-P-EX">C.P.EX.:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-C-P-EX" name="ss-{{ ss.id }}-C-P-EX" type="text" value="{{ first_qq.p3_cpex|default_if_none:"" }}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-70-percent-C-P-EX">70% C.P.EX.:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-70-percent-C-P-EX" name="ss-{{ ss.id }}-70-percent-C-P-EX" type="text" value="{{ first_qq.p3_cpex_percent|default_if_none:"" }}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-EX">C.EX.:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-C-EX" name="ss-{{ ss.id }}-C-EX" type="text" value="{{ first_qq.p3_cex|default_if_none:"" }}" />
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-P-EX">C.P.EX.:</label></div>
-            <div class="col-4 col-inp-qualification">
-                <input class="inp-qualification" id="ss-{{ ss.id }}-C-P-EX" name="ss-{{ ss.id }}-C-P-EX" type="text" value="{{ first_qq.p3_cpex|default_if_none:"" }}" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-70-percent-C-P-EX">70% C.P.EX.:</label></div>
-            <div class="col-4 col-inp-qualification">
-                <input class="inp-qualification" id="ss-{{ ss.id }}-70-percent-C-P-EX" name="ss-{{ ss.id }}-70-percent-C-P-EX" type="text" value="{{ first_qq.p3_cpex_percent|default_if_none:"" }}" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-EX">C.EX.:</label></div>
-            <div class="col-4 col-inp-qualification">
-                <input class="inp-qualification" id="ss-{{ ss.id }}-C-EX" name="ss-{{ ss.id }}-C-EX" type="text" value="{{ first_qq.p3_cex|default_if_none:"" }}" />
-            </div>
-        </div>
-    </div>
             {% endwith %}
         {% endfor %}
     </div>
@@ -177,31 +177,31 @@
         {% for ss in student_subjects %}
             {% with ss.qualification_set.all|first as first_qq %}
             <div class="col-2 qualification-column">
-        <div class="row">
-            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-30-percent-P-C-P">30% P.C.P:</label></div>
-            <div class="col-4 col-inp-qualification">
-                <input class="inp-qualification" id="ss-{{ ss.id }}-30-percent-P-C-P" name="ss-{{ ss.id }}-30-percent-P-C-P" type="text" value="{{ first_qq.p3_pcp_percent|default_if_none:"" }}" />
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-30-percent-P-C-P">30% P.C.P:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-30-percent-P-C-P" name="ss-{{ ss.id }}-30-percent-P-C-P" type="text" value="{{ first_qq.p3_pcp_percent|default_if_none:"" }}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-P-EX">C.P.EX.:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-C-P-EX" name="ss-{{ ss.id }}-C-P-EX" type="text" value="{{ first_qq.p3_cpex|default_if_none:"" }}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-70-percent-C-P-EX">70% C.P.EX.:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-70-percent-C-P-EX" name="ss-{{ ss.id }}-70-percent-C-P-EX" type="text" value="{{ first_qq.p3_cpex_percent|default_if_none:"" }}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-EX">C.EX.:</label></div>
+                    <div class="col-4 col-inp-qualification">
+                        <input class="inp-qualification" id="ss-{{ ss.id }}-C-EX" name="ss-{{ ss.id }}-C-EX" type="text" value="{{ first_qq.p3_cex|default_if_none:"" }}" />
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-P-EX">C.P.EX.:</label></div>
-            <div class="col-4 col-inp-qualification">
-                <input class="inp-qualification" id="ss-{{ ss.id }}-C-P-EX" name="ss-{{ ss.id }}-C-P-EX" type="text" value="{{ first_qq.p3_cpex|default_if_none:"" }}" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-70-percent-C-P-EX">70% C.P.EX.:</label></div>
-            <div class="col-4 col-inp-qualification">
-                <input class="inp-qualification" id="ss-{{ ss.id }}-70-percent-C-P-EX" name="ss-{{ ss.id }}-70-percent-C-P-EX" type="text" value="{{ first_qq.p3_cpex_percent|default_if_none:"" }}" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-7 col-lbl-qualification"><label class="lbl-qualification" for="ss-{{ ss.id }}-C-EX">C.EX.:</label></div>
-            <div class="col-4 col-inp-qualification">
-                <input class="inp-qualification" id="ss-{{ ss.id }}-C-EX" name="ss-{{ ss.id }}-C-EX" type="text" value="{{ first_qq.p3_cex|default_if_none:"" }}" />
-            </div>
-        </div>
-    </div>
             {% endwith %}
         {% endfor %}
     </div>
