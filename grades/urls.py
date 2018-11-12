@@ -21,6 +21,7 @@ urlpatterns = [
     path('', login_view),
     path('student/<int:student_id>/', grades_form),
     path('student/<int:student_id>/qualification', save_qualification),
+    path('report/student/<int:student_id>/qualification', report_qualification),
     path('students', show_student_list),
     path('logout', logout_view),
 ]

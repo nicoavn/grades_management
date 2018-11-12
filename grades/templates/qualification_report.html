@@ -1,10 +1,524 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Boletín de Calificaciones</title>
+    <style type="text/css">
+        @font-face {
+            font-family: MyriadPro-Bold;
+            src: url('{% static "fonts/MyriadPro-Bold.eot" %}');
+            src: url('{% static "fonts/MyriadPro-Bold.eot?#iefix" %}') format('embedded-opentype'),
+            url('{% static "fonts/MyriadPro-Bold.woff" %}') format('woff'),
+            url('{% static "fonts/MyriadPro-Bold.ttf" %}') format('truetype'),
+            url('{% static "fonts/MyriadPro-Bold.svg" %}#MyriadPro-Bold') format('svg');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: MyriadPro-Semibold;
+            src: url('{% static "fonts/MyriadPro-Semibold.eot" %}');
+            src: url('{% static "fonts/MyriadPro-Semibold.eot?#iefix" %}') format('embedded-opentype'),
+            url('{% static "fonts/MyriadPro-Semibold.woff" %}') format('woff'),
+            url('{% static "fonts/MyriadPro-Semibold.ttf" %}') format('truetype'),
+            url('{% static "fonts/MyriadPro-Semibold.svg" %}#MyriadPro-Semibold') format('svg');
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: MyriadPro-Regular;
+            src: url('{% static "fonts/MyriadPro-Regular.eot" %}');
+            src: url('{% static "fonts/MyriadPro-Regular.eot?#iefix" %}') format('embedded-opentype'),
+            url('{% static "fonts/MyriadPro-Regular.woff" %}') format('woff'),
+            url('{% static "fonts/MyriadPro-Regular.ttf" %}') format('truetype'),
+            url('{% static "fonts/MyriadPro-Regular.svg" %}#MyriadPro-Regular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Optima';
+            src: url('{% static "fonts/Optima-Regular.eot" %}');
+            src: url('{% static "fonts/Optima-Regular.eot?#iefix" %}') format('embedded-opentype'),
+            url('{% static "fonts/Optima-Regular.woff2" %}') format('woff2'),
+            url('{% static "fonts/Optima-Regular.woff" %}') format('woff'),
+            url('{% static "fonts/Optima-Regular.svg" %}#Optima-Regular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --cWhite: #FFFFFF;
+            --cBlack: #000000;
+            --cGrayLight: #E6E7E8;
+            --cGrayDark: #58595B;
+            --cGrayDarkAlt: #414042;
+            --fMyriadProRegular: MyriadPro-Regular, "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+            --fMyriadProSemibold: MyriadPro-Semibold, "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+            --fMyriadProBold: MyriadPro-Bold, "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .main-container {
+            font-family: var(--fMyriadProRegular);
+            max-width: 720px;
+            margin: 42px 36px 32px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .main-container .heading {
+            background: var(--cBlack);
+            text-align: center;
+            color: var(--cWhite);
+            font-weight: 700;
+            padding: 3px 0;
+            font-family: var(--fMyriadProBold);
+            font-size: 13px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .student-name-course .field-container {
+            border-bottom: 1px solid var(--cGrayDark);
+            margin: 20px 0;
+        }
+
+        .student-name-course .field-container .fullname {
+            display: inline-block;
+            padding: 4px 20px;
+            background: var(--cGrayDark);
+            color: var(--cWhite);
+            font-size: 10px;
+            font-family: var(--fMyriadProBold);
+        }
+
+        .course-logo-container {
+            float: right;
+            position: relative;
+            top: -22px;
+            right: -1px;
+            background: var(--cWhite);
+            padding-left: 54px;
+            margin-bottom: -18px;
+        }
+
+        .course-logo-container img {
+        }
+
+        .clear-fix::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .qualifications {
+            border: 1px solid var(--cBlack);
+        }
+
+        .qualification-headings {
+
+        }
+
+        .heading-block {
+            {#float: left;#}
+            font-size: 10px;
+            border-bottom: 1px solid var(--cBlack);
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .heading-block + .heading-block {
+            {#margin-left: -3px;#}
+        }
+
+        {#.qualification-headings #}
+
+        .heading-block.heading-block-first {
+            background: var(--cGrayDarkAlt);
+            color: var(--cWhite);
+            font-family: var(--fMyriadProBold);
+            text-align: center;
+            width: 109px;
+            padding: 35px 0;
+            border-right: 1px solid var(--cBlack);
+            border-bottom-color: var(--cWhite);
+        }
+
+        .heading-block.heading-block-second {
+            height: 83px;
+            border-right: 2px solid var(--cBlack);
+        }
+
+        .heading-block .top-in-block {
+            font-family: var(--fMyriadProSemibold);
+            background: var(--cGrayLight);
+            padding: 7px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--cBlack);
+        }
+
+        .heading-block .right-in-block {
+            float: right;
+            padding: 21px 7px;
+            font-family: var(--fMyriadProBold);
+            background: var(--cGrayLight);
+        }
+
+        .heading-block .block-content {
+            float: left;
+            width: 140px;
+            text-align: center;
+            border-right: 1px solid var(--cBlack);
+        }
+
+        .heading-block .block-content-top {
+            border-bottom: 1px solid var(--cBlack);
+            padding: 3px 0;
+        }
+
+        .heading-block .block-content .boxes {
+            display: table;
+            width: 100%;
+            height: 36px
+        }
+
+        .heading-block .block-content .boxes .box {
+            display: table-cell;
+            font-size: 8px;
+            width: 25%;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .heading-block .block-content .boxes .box + .box {
+            border-left: 1px solid var(--cBlack);
+        }
+
+        .heading-block.heading-block-third {
+            {#background: var(--cGrayDarkAlt);#}
+            {#color: var(--cWhite);#}
+            {#font-family: var(--fMyriadProBold);#}
+            text-align: center;
+            width: 31px;
+            padding: 29px 0 28px;
+            border-right: 1px solid var(--cBlack);
+        }
+
+        .heading-block.heading-block-fourth {
+            {#margin-left: -4px;#}
+        }
+
+        .heading-block.heading-block-fifth,
+        .heading-block.heading-block-fourth {
+            height: 83px;
+            border-right: 2px solid var(--cBlack);
+        }
+
+        .heading-block.heading-block-fourth .block-content {
+            width: 100px;
+        }
+
+        .heading-block.heading-block-fifth .block-content {
+            width: 100px;
+        }
+
+        .heading-block.heading-block-fifth .block-content .boxes,
+        .heading-block.heading-block-fourth .block-content .boxes {
+            height: 56px;
+        }
+
+        .heading-block.heading-block-fifth .top-in-block {
+            font-size: 9px;
+            padding: 8px 0;
+        }
+
+        .heading-block.heading-block-seventh {
+            float: right;
+            margin-left: -1px;
+        }
+
+        .heading-block.heading-block-sixth,
+        .heading-block.heading-block-seventh {
+            height: 83px;
+            {#border-right: 2px solid var(--cBlack);#}
+        }
+
+        .heading-block.heading-block-sixth .top-in-block,
+        .heading-block.heading-block-seventh .top-in-block {
+            background: var(--cWhite);
+            padding: 1px 0 0;
+            border-right: 1px solid var(--cBlack);
+            font-family: var(--fMyriadProSemibold);
+        }
+
+        .heading-block.heading-block-seventh,
+        .heading-block.heading-block-seventh .top-in-block {
+            border-right: none;
+        }
+
+        .heading-block.heading-block-sixth .block-content {
+            width: 65px;
+        }
+
+        .heading-block.heading-block-seventh .block-content .block-content-top {
+            font-size: 9px;
+        }
+
+        .heading-block.heading-block-sixth .block-content .boxes,
+        .heading-block.heading-block-seventh .block-content .boxes {
+            height: 56px;
+        }
+
+        {#.heading-block.heading-block-sixth .block-content .boxes .box + .box,#}
+        {#.heading-block.heading-block-seventh .block-content .boxes .box + .box {#}
+        {#    border-left: 1px solid var(--cBlack);#}
+        {#}#}
+
+        .heading-block.heading-block-seventh .block-content {
+            width: 64px;
+            border-right: none;
+        }
+
+        .heading-block.heading-block-seventh .block-content .boxes {
+            height: 37px;
+        }
+
+        .heading-block.heading-block-seventh .top-in-block {
+            padding: 7px 0;
+        }
+
+        .student-subjects {}
+
+        .student-subjects table {
+            width: 100%;
+            border: none;
+            border-spacing: 0;
+            {#border-collapse: collapse;#}
+        }
+
+        .student-subjects table tr {}
+
+        .student-subjects table tr th {
+            background: var(--cGrayDarkAlt);
+            color: var(--cWhite);
+            font-family: var(--fMyriadProBold);
+            font-size: 8px;
+            text-align: center;
+            width: 117px !important;
+            padding: 5px 0;
+            border-right: 1px solid var(--cGrayDarkAlt);
+            border-bottom: 1px solid var(--cWhite);
+        }
+
+        td {
+            font-size: 8px;
+            text-align: center;
+            width: 34px !important;
+            border-collapse: collapse;
+            border-left: 1px solid var(--cBlack);
+            border-bottom: 1px solid var(--cBlack);
+        }
+
+        .student-subjects table tr:last-child td {
+            border-bottom: none;
+        }
+
+        td.td-p1-partial1 {
+            width: 35px !important;
+        }
+
+        td.td-p1-partial2 {
+            width: 34px !important;
+        }
+
+        td.td-p1-partial3 {
+            width: 34px !important;
+        }
+
+        td.td-p1-partial4 {
+            width: 34px !important;
+        }
+
+        td.td-p1-cf {
+            width: 30px !important;
+        }
+
+        td.td-p1-aa-percent {
+            width: 30px !important;
+        }
+
+        td.td-p2-pcp-percent {
+            width: 33px !important;
+        }
+
+        td.td-p2-cpc {
+            width: 31px !important;
+        }
+
+        td.td-p2-cpc-percent {
+            width: 33px !important;
+        }
+
+        td.td-p2-cc {
+            {#width: 33px;#}
+            width: 31px !important;
+        }
+
+        td.td-p3-pcp-percent {
+            {#width: 33px;#}
+            width: 33px !important;
+        }
+
+        td.td-p3-cpex {
+            width: 30px !important;
+        }
+
+        td.td-p3-cpex-percent {
+            width: 32px !important;
+        }
+
+        td.td-p3-cex {
+            {#width: 38px;#}
+            width: 36px !important;
+        }
+
+        td.td-a {
+            width: 32px !important;
+        }
+
+        td.td-r {
+            width: 31px !important;
+        }
+
+        td.td-cap-1 {
+            width: 31px !important;
+        }
+
+        td.td-cap-2 {
+            width: 30px !important;
+        }
+    </style>
 </head>
 <body>
+<div class="main-container">
+    <div class="heading">
+        CALIFICACIONES DE RENDIMIENTO
+    </div>
 
+    <div class="student-name-course">
+        <div class="course-logo-container">
+            <img src="{% static "img/logo-4.png" %}" alt="4to Secundaria">
+        </div>
+        <div class="field-container">
+            <span class="fullname">NOMBRES Y APELLIDOS</span>
+        </div>
+    </div>
+
+    <div class="qualifications">
+        <div class="qualification-headings clear-fix">
+            <div class="subjects heading-block heading-block-first">
+                ASIGNATURAS
+            </div><div class="heading-block heading-block-second">
+                <div class="top-in-block">CALIFICACIONES DEL AÑO ESCOLAR</div>
+                <div class="clear-fix">
+                    <div class="right-in-block">C.F.</div>
+                    <div class="block-content">
+                        <div class="block-content-top">CALIFICACIONES PARCIALES</div>
+                        <div class="boxes clearfix">
+                            <div class="box">AGO-<br/>SEPT-<br/>OCT</div>
+                            <div class="box">NOV-<br/>DIC-<br/>ENE</div>
+                            <div class="box">FEB-<br/>MAR</div>
+                            <div class="box">ABRIL-<br/>MAYO-<br/>JUNIO</div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="heading-block heading-block-third">
+                %<br/>A.A
+            </div><div class="heading-block heading-block-fourth">
+                <div class="top-in-block">CALIFICACIÓN COMPLETIVA</div>
+                <div class="clear-fix">
+                    <div class="right-in-block">C.C.</div>
+                    <div class="block-content">
+                        <div class="boxes clearfix">
+                            <div class="box">50%<br/>P.C.P.</div>
+                            <div class="box">C.P.C.</div>
+                            <div class="box">50%<br/>C.P.C.</div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="heading-block heading-block-fifth">
+                <div class="top-in-block">CALIFICACIÓN EXTRAORDINARIA</div>
+                <div class="clear-fix">
+                    <div class="right-in-block">C.EX.</div>
+                    <div class="block-content">
+                        <div class="boxes clearfix">
+                            <div class="box">30%<br/>P.C.P.</div>
+                            <div class="box"><strong>C.P.EX.</strong></div>
+                            <div class="box">70%<br/>C.P.EX.</div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="heading-block heading-block-sixth">
+                <div class="top-in-block">SITUACIÓN<br/>FINAL</div>
+                <div class="clear-fix">
+                    <div class="block-content">
+                        <div class="boxes clearfix">
+                            <div class="box">A</div>
+                            <div class="box"><strong>R</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="heading-block heading-block-seventh">
+                <div class="top-in-block">C.A.P.</div>
+                <div class="clear-fix">
+                    <div class="block-content">
+                        <div class="block-content-top">OPORTUNIDAD</div>
+                        <div class="boxes clearfix">
+                            <div class="box"><strong>1</strong></div>
+                            <div class="box"><strong>2</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="student-subjects">
+        <table>
+            {% for ss in student_subjects %}
+                {% with ss.qualification_set.all|first as first_qq %}
+                <tr class="student-subject-row">
+                <th>{{ ss.subject.name }}</th>
+                <td class="td-p1-partial1">{{ first_qq.p1_partial1|default_if_none:"" }}</td>
+                <td class="td-p1-partial2">{{ first_qq.p1_partial2|default_if_none:"" }}</td>
+                <td class="td-p1-partial3">{{ first_qq.p1_partial3|default_if_none:"" }}</td>
+                <td class="td-p1-partial4">{{ first_qq.p1_partial4|default_if_none:"" }}</td>
+                <td class="td-p1-cf">{{ first_qq.p1_cf|default_if_none:"" }}</td>
+                <td class="td-p1-aa-percent">{{ first_qq.p1_aa_percent|default_if_none:"" }}</td>
+                <td class="td-p2-pcp-percent">{{ first_qq.p2_pcp_percent|default_if_none:"" }}</td>
+                <td class="td-p2-cpc">{{ first_qq.p2_cpc|default_if_none:"" }}</td>
+                <td class="td-p2-cpc-percent">{{ first_qq.p2_cpc_percent|default_if_none:"" }}</td>
+                <td class="td-p2-cc">{{ first_qq.p2_cc|default_if_none:"" }}</td>
+                <td class="td-p3-pcp-percent">{{ first_qq.p3_pcp_percent|default_if_none:"" }}</td>
+                <td class="td-p3-cpex">{{ first_qq.p3_cpex|default_if_none:"" }}</td>
+                <td class="td-p3-cpex-percent">{{ first_qq.p3_cpex_percent|default_if_none:"" }}</td>
+                <td class="td-p3-cex">{{ first_qq.p3_cex|default_if_none:"" }}</td>
+                <td class="td-a ">{% if first_qq.a %}X{% else %}{% endif %}</td>
+                <td class="td-r ">{% if first_qq.r %}X{% else %}{% endif %}</td>
+                <td class="td-cap-1">{{ first_qq.cap_1|default_if_none:"" }}</td>
+                <td class="td-cap-2">{{ first_qq.cap_2|default_if_none:"" }}</td>
+                </tr>
+                {% endwith %}
+            {% endfor %}
+        </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>

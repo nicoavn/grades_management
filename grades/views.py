@@ -86,3 +86,19 @@ def save_qualification(request, student_id):
             working_qualification.save()
 
     return redirect("/student/" + str(student_id))
+
+
+def report_qualification(request, student_id):
+    student = Student.objects.get(pk=student_id)
+
+    student_subjects = student.studentsubject_set.all()
+
+    ss = StudentSubject()
+    ss.qualification_set.first()
+
+    context = {
+        'student': student,
+        'student_subjects': student_subjects,
+        # 'qualifications': Qualification.objects.all(),
+    }
+    return render(request, 'qualification_report.html', context)
